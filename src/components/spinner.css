@@ -1,0 +1,20 @@
+.spinner {
+  width: 40px;
+  height: 14px;
+  display: inline-block;
+}
+.spinner svg { width: 100%; height: 100%; }
+.spinner path {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 60;
+  stroke-dashoffset: 60;
+  animation: pulse-draw 1.2s ease-in-out infinite;
+}
+@keyframes pulse-draw {
+  0% { stroke-dashoffset: 60; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -60; }
+}
