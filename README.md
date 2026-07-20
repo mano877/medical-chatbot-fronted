@@ -2,18 +2,18 @@
 
 A React frontend for the Dr. Aria Medical Assistant Chatbot API. Patients sign up, log in, and chat privately with an AI medical assistant — with multi-conversation sessions, chat history, AI-generated insights, and document upload (RAG).
 
-> This frontend talks to a separate FastAPI backend. See [medical-chatbot](../medical-chatbot) (or your backend repo link) for the API.
+> This frontend talks to a separate FastAPI backend. See [medical-chatbot](https://github.com/mano877/medical_chatbot) for the API.
 
 ---
 
 ## Features
 
 - 🔐 **Authentication** — signup, login, logout (JWT-based, private per-patient data)
-- 💬 **Multi-conversation chat** — sidebar with date-grouped conversation history, "New Chat", per-conversation and per-message delete
-- 📜 **History** — view and clear your full chat history
-- 🔍 **Insights** — AI-generated conversation summary, extracted symptoms, and a "second opinion" analysis
-- 📄 **Documents** — upload PDFs (lab reports, prescriptions, guidelines) that Dr. Aria references during chat (RAG), scoped privately per patient
-- 🎨 Custom design system — teal/amber medical theme, Space Grotesk + Inter + IBM Plex Mono fonts, animated heartbeat/ECG motif
+- 💬 **Multi-conversation chat**  sidebar with date-grouped conversation history, "New Chat", per-conversation and per-message delete
+- 📜 **History**  view and clear your full chat history
+- 🔍 **Insights**  AI-generated conversation summary, extracted symptoms, and a "second opinion" analysis
+- 📄 **Documents**  upload PDFs (lab reports, prescriptions, guidelines) that Dr. Aria references during chat (RAG), scoped privately per patient
+- 🎨 Custom design system  teal/amber medical theme, Space Grotesk + Inter + IBM Plex Mono fonts, animated heartbeat/ECG motif
 
 ---
 
