@@ -42,19 +42,27 @@ function Chat() {
   }
 
   async function handleSend(event) {
-    event.preventDefault()
-    if (!input.trim() || !activeConversationId) return
+  event.preventDefault()
+  if (!input.trim()) return
 
-    const userMessage = { role: 'human', content: input }
-    setMessages((prev) => [...prev, userMessage])
-    setInput('')
-    setLoading(true)
-
-    const data = await sendMessage(userId, activeConversationId, input)
-    const aiMessage = { role: 'ai', content: data.response }
-    setMessages((prev) => [...prev, aiMessage])
-    setLoading(false)
+  let conversationId = activeConversationId
+  if (!conversationId) {
+    const conversation = await createConversation()
+    setConversations((prev) => [conversation, ...prev])
+    setActiveConversationId(conversation.id)
+    conversationId = conversation.id
   }
+
+  const userMessage = { role: 'human', content: input }
+  setMessages((prev) => [...prev, userMessage])
+  setInput('')
+  setLoading(true)
+
+  const data = await sendMessage(userId, conversationId, input)
+  const aiMessage = { role: 'ai', content: data.response }
+  setMessages((prev) => [...prev, aiMessage])
+  setLoading(false)
+}
 
   async function handleDeleteConversation(event, conversationId) {
   event.stopPropagation()
